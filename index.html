@@ -19,13 +19,13 @@
     <nav>
       <ul>
         <li>
-          <a href="">Home</a>
+          <a href="#home">Home</a>
         </li>
         <li>
-          <a href="">About</a>
+          <a href="#about">About</a>
         </li>
         <li>
-          <a href="">Register Complaint</a>
+          <a href="#register">Register Complaint</a>
         </li>
         <li>
           <a href="">Resources</a>
@@ -40,7 +40,7 @@
     </nav>
     <hr />
     <main>
-      <section>
+      <section id="home">
         <figure>
           <img
             src="https://mietjmu.in/wp-content/uploads/2025/02/DJI_20241129113027_0387_D-Large.jpeg"
@@ -57,7 +57,7 @@
         </p>
       </section>
       <hr />
-      <section>
+      <section id="about">
         <h2>About the Helpdesk</h2>
         <p>
           The MIET Smart Campus Helpdesk is a digital platform that allows
@@ -78,7 +78,7 @@
         </ol>
       </section>
       <hr />
-      <section>
+      <section id="register">
         <h2>Register a Complaint</h2>
         <p>Fields marked with <strong>*</strong> are required.</p>
         <form>
@@ -119,11 +119,128 @@
               <option value="other">Other</option>
             </select>
             <label for="complaint">Complaint Title *</label>
-            <input type="text" placeholder="Brief title (min 10 characters)" minlength="10" />
+            <input
+              type="text"
+              placeholder="Brief title (min 10 characters)"
+              minlength="10"
+            />
             <label for="description">Description *</label>
-            <textarea name="description" id="description" ></textarea>
+            <textarea name="description" id="description"></textarea>
+            <p>Priority *</p>
+            <label>
+              <input type="radio" value="low" name="priority" />
+              Low
+            </label>
+            <label>
+              <input type="radio" value="medium" name="priority" />
+              Medium
+            </label>
+            <label>
+              <input type="radio" value="high" name="priority" />
+              High
+            </label>
+            <label>
+              <input type="radio" value="urgent" name="priority" />
+              Urgent
+            </label>
+            <label for="location">Location</label>
+            <input
+              type="text"
+              id="location"
+              list="locations"
+              placeholder="start typing for suggestion"
+            />
+            <datalist id="locations">
+              <option value="Main Block"></option>
+              <option value="Hostel A"></option>
+              <option value="Hostel B"></option>
+              <option value="Lab Complex"></option>
+              <option value="Library"></option>
+              <option value="Canteen"></option>
+            </datalist>
+          </fieldset>
+          <fieldset>
+            <legend><h3>Supporting Information (Optional)</h3></legend>
+            <label for="date">Date of Issue</label>
+            <input type="date" id="date" />
+            <label for="images">Upload Images</label>
+            <input type="file" id="images" accept="images/*" multiple />
+            <label for="satisfaction">Satisfaction before issue (1-10)</label>
+            <input type="range" id="satisfaction" min="1" max="10" value="5" />
+            <label for="color">Resolution Tag</label>
+            <input type="color" id="color" value="#ff0000" />
+          </fieldset>
+          <fieldset>
+            <legend><h3>Submit</h3></legend>
+            <p>
+              <input type="checkbox" value="accept" required /> I confirm the
+              information provided is correct *
+            </p>
+            <input type="submit" value="Submit Complaint" />
+            <input type="reset" value="Clear Form" />
           </fieldset>
         </form>
+      </section>
+      <hr />
+      <section>
+        <h2>Resources & Downloads</h2>
+        <table>
+          <caption>
+            Course Materials and Helpdesk Resources
+          </caption>
+          <thead>
+            <tr>
+              <th>Resource Name</th>
+              <th>Type</th>
+              <th>Size</th>
+              <th>Download</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Helpdesk User Guide</td>
+              <td>PDF</td>
+              <td>1.2 MB</td>
+              <td><a href="#" download>Download</a></td>
+            </tr>
+            <tr>
+              <td>Complaint SOP Document</td>
+              <td>PDF</td>
+              <td>800 kb</td>
+              <td><a href="#" download="">Download</a></td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td><strong>Total Resources Available: 5</strong></td>
+            </tr>
+          </tfoot>
+        </table>
+      </section>
+      <hr />
+      <section>
+        <h2>Frequently Asked Questions</h2>
+        <details>
+          <summary>How do I track my complaint status?</summary>
+          <p>
+            After submitting a complaint, you will receive email updates. You
+            can also check the status by logging into the student portal.
+          </p>
+        </details>
+        <details>
+          <summary>How long does it take to resolve a complaint?</summary>
+          <p>
+            Most complaints are resolved within 48 hours. Urgent issues are
+            prioritised and resolved within 24 hours.
+          </p>
+        </details>
+        <details>
+          <summary>Can I submit an anonymous complaint?</summary>
+          <p>
+            Yes, you may leave the name field as "Anonymous". However, providing
+            contact details helps us resolve issues faster.
+          </p>
+        </details>
       </section>
     </main>
   </body>
